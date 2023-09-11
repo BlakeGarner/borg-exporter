@@ -29,7 +29,7 @@ def create_metrics(registry):
 
 
 def collect(borgmatic_configs, registry):
-    borgmatic_configs = " ".join(borgmatic_configs)
+    borgmatic_configs = " -c ".join(borgmatic_configs)
     list_infos = run_borgmatic_cmd(f"borgmatic list -c {borgmatic_configs} --json")
     repo_infos = run_borgmatic_cmd(f"borgmatic info -c {borgmatic_configs} --json")
 
